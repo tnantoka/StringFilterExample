@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StringFilter</title>
+  #import("head")
+</head>
+<body>
+  #import("body")
+</body>
+</html>

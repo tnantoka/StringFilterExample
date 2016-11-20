@@ -1,0 +1,36 @@
+#extend("base")
+
+#export("head") {
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/app.css">
+}
+
+#export("body") {
+  <nav class="navbar navbar-full navbar-light bg-faded">
+    <div class="container">
+      <a class="navbar-brand" href="">StringFilter</a>
+      <ul class="nav navbar-nav float-xs-right">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://github.com/tnantoka/StringFilter"><i class="fa fa-github"></i> GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container mt-1">
+    <div id="app"></div>
+  </div>
+
+  <div class="bg-faded">
+    <div class="container">
+      <p class="m-0 p-1">
+        <small><a href="https://github.com/tnantoka/StringFilterExample">tnantoka/StringFilterExample</a></small>
+      </p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+  <script type="text/babel" src="/scripts/app.js"></script>
+}

@@ -7,12 +7,14 @@ class Example extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      example: this.props.example
+      example: this.props.example,
+      loading: false,
     }
   }
 
   handleSubmit(e) {
     e.preventDefault()
+    this.setState({ loading: true })
     const { example } = this.state
 
     const headers = new Headers()
@@ -26,18 +28,18 @@ class Example extends React.Component {
     .then((json) => {
       const { example } = this.state
       example.output = json.output
-      this.setState({ example: example })
+      this.setState({ example, loading: false })
     })
   }
 
   handleChange(event) {
     const { example } = this.state
     example.input = event.target.value
-    this.setState({ example: example })
+    this.setState({ example })
   }
 
   render() {
-    const { example } = this.state
+    const { example, loading } = this.state
     return (
       <tr key={ example.id }>
         <td>
@@ -49,7 +51,7 @@ class Example extends React.Component {
               <input type="text" className="form-control" value={ example.input } onChange={ this.handleChange.bind(this) } />
               <span className="input-group-btn">
                 <button className="btn btn-secondary" type="submit">
-                  <i className="fa fa-fw fa-refresh"></i>
+                  <i className={ `fa fa-fw fa-refresh ${loading ? 'fa-spin' : ''}` }></i>
                 </button>
               </span>
             </div>
